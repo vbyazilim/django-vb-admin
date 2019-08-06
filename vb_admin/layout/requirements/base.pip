@@ -1,0 +1,7 @@
+Django==2.2.4
+django-vb-baseapp==1.0.0
+Pillow==6.1.0
+django-extensions==2.2.1
+python-slugify==3.0.3
+psycopg2-binary==2.8.3
+dj-database-url==0.5.0
