@@ -1,6 +1,6 @@
 ![Python](https://img.shields.io/badge/python-3.7.3-green.svg)
 ![Django](https://img.shields.io/badge/django-2.2.4-green.svg)
-![Version](https://img.shields.io/badge/version-1.0.0-orange.svg)
+![Version](https://img.shields.io/badge/version-1.0.1-orange.svg)
 
 # django-vb-admin
 
