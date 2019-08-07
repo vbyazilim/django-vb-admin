@@ -1,8 +1,14 @@
+task :default => [:install]
+
 task :clean do
   rm_rf "build"
   rm_rf "dist"
   rm_rf "django_vb_admin.egg-info"
   puts "Build files are removed..."
+end
+
+task :install do
+  system "pip install -e ."
 end
 
 desc "Build package"

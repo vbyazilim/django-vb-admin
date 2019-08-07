@@ -5,6 +5,8 @@ import os
 import shutil
 import sys
 
+from vb_admin import __version__ as VERSION
+
 __all__ = ['execute_from_command_line']
 
 
@@ -40,6 +42,7 @@ class Command:
         )
         parser.add_argument('-t', '--target', type=str, help='Target path', default='.')
         parser.add_argument('-v', '--verbosity', type=int, choices=[0, 1], help='Verbose mode', default=0)
+        parser.add_argument('--version', action='version', version=VERSION)
 
         args = parser.parse_args()
 
