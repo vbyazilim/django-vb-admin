@@ -1,1 +1,2 @@
 -r base.pip
+uWSGI==2.0.18

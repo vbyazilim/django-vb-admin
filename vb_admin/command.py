@@ -61,9 +61,27 @@ class Command:
             destination = os.path.join(self.target, item)
 
             if os.path.isdir(source):
+                if self.verbosity > 0:
+                    self.out(f'Creating: {destination} folder')
                 shutil.copytree(source, destination)
             else:
+                if self.verbosity > 0:
+                    self.out(f'Copying {destination}')
                 shutil.copy2(source, destination)
+
+        src_development_config_file = os.path.join(self.layout_dir, 'config', 'settings', 'development.example.py')
+        src_test_config_file = os.path.join(self.layout_dir, 'config', 'settings', 'test.example.py')
+
+        dst_development_config_file = os.path.join(self.target, 'config', 'settings', 'development.py')
+        dst_test_config_file = os.path.join(self.target, 'config', 'settings', 'test.py')
+
+        if self.verbosity > 0:
+            self.out('Cloning: development.py')
+        shutil.copy2(src_development_config_file, dst_development_config_file)
+
+        if self.verbosity > 0:
+            self.out('Cloning: test.py')
+        shutil.copy2(src_test_config_file, dst_test_config_file)
 
         if self.verbosity > 0:
             self.out(f'Copy completed')

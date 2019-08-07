@@ -27,13 +27,28 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # noqa: F405  # noqa: F405
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)  # noqa: F405
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # noqa: F405
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_ACCESS_KEY_ID = os.environ.get('S3_ACCESS_KEY_ID')  # noqa: F405
+AWS_SECRET_ACCESS_KEY = os.environ.get('S3_SECRET_ACCESS_KEY')  # noqa: F405
+
+AWS_STORAGE_BUCKET_NAME = os.environ.get('S3_BUCKET_NAME')  # noqa: F405
+AWS_DEFAULT_ACL = 'public-read'
+
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+AWS_IS_GZIPPED = True
+AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 
 # fmt: off
 INSTALLED_APPS.insert(  # noqa: F405
     INSTALLED_APPS.index('django.contrib.staticfiles'),  # noqa: F405
     'whitenoise.runserver_nostatic',
 )
+
+INSTALLED_APPS += [  # noqa: F405
+    'storages',
+]
 
 MIDDLEWARE.insert(  # noqa: F405
     MIDDLEWARE.index('django.middleware.security.SecurityMiddleware') + 1,  # noqa: F405
@@ -42,7 +57,7 @@ MIDDLEWARE.insert(  # noqa: F405
 # fmt: on
 
 LOGGING_CONFIG = None
-DJANGO_LOG_LEVEL = os.environ.get('DJANGO_LOG_LEVEL', 'INFO')  # noqa: F405
+DJANGO_LOG_LEVEL = os.environ.get('LOGLEVEL', 'info').upper()  # noqa: F405
 
 logging.config.dictConfig(
     {

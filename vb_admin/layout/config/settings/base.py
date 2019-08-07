@@ -60,7 +60,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-AUTH_USER_MODEL = 'vb_baseapp.User'
+# AUTH_USER_MODEL = 'vb_baseapp.User'
 
 # add your newly created apps here!
 INSTALLED_APPS += ['django_extensions']
