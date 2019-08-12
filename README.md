@@ -1,6 +1,6 @@
 ![Python](https://img.shields.io/badge/python-3.7.3-green.svg)
 ![Django](https://img.shields.io/badge/django-2.2.4-green.svg)
-![Version](https://img.shields.io/badge/version-1.0.4-orange.svg)
+![Version](https://img.shields.io/badge/version-1.0.5-orange.svg)
 
 # django-vb-admin
 
@@ -61,6 +61,11 @@ Directory structure:
 │   ├── __init__.py
 │   ├── urls.py
 │   └── wsgi.py
+├── locale
+│   └── tr
+│       └── LC_MESSAGES
+│           ├── django.mo
+│           └── django.po
 ├── requirements
 │   ├── base.pip
 │   ├── development.pip
@@ -68,19 +73,26 @@ Directory structure:
 │   └── production.pip
 ├── static
 │   ├── css
-│   │   └── application.css
+│   │   ├── application.css
+│   │   └── bulma.min.0.7.5.css
 │   ├── images
 │   │   └── .gitkeep
 │   └── js
-│       └── .gitkeep
+│       ├── .gitkeep
+│       ├── application.js
+│       └── fontawesome.5.3.1.all.js
 ├── templates
-│   └── custom_errors
-│       ├── 400.html
-│       ├── 403.html
-│       ├── 404.html
-│       └── 500.html
+│   ├── admin
+│   │   └── base_site.html
+│   ├── custom_errors
+│   │   ├── 400.html
+│   │   ├── 403.html
+│   │   ├── 404.html
+│   │   └── 500.html
+│   └── base.html
 ├── .bandit
 ├── .flake8
+├── .gitignore
 ├── .isort.cfg
 ├── .pylintrc
 ├── .python-version
@@ -218,6 +230,7 @@ All PR’s are welcome!
 - Add `static/js/application.js`
 - Add global locale path
 - Version bump: 1.0.4
+- Version bump: 1.0.5 (*Fix README file*)
 
 
 **2019-08-07**
