@@ -1,0 +1,53 @@
+# Turkish language support for common usage.
+# Copyright (C) 2019 Uğur "vigo" Özyılmazel
+# This file is distributed under the same license as the django-vb-admin package.
+# Uğur Özyılmazel <ugurozyilmazel@gmail.com>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: django-vb-admin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-12 11:36+0000\n"
+"PO-Revision-Date: 2019-08-12 14:39+0300\n"
+"Last-Translator: Uğur Özyılmazel <ugurozyilmazel@gmail.com>\n"
+"Language-Team: Turkish <ugurozyilmazel@gmail.com>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.2.3\n"
+
+#: config/urls.py:16
+msgid "Your admin index title"
+msgstr "Admin anasayfa başlığı"
+
+#: config/urls.py:17
+msgid "Your site title"
+msgstr "Sitenizin başlığı"
+
+#: config/urls.py:18
+msgid "Your site header"
+msgstr "Marka ya da proje başlığı"
+
+#: templates/custom_errors/400.html:4 templates/custom_errors/400.html:9
+msgid "Bad request"
+msgstr "Hatalı istek"
+
+#: templates/custom_errors/400.html:11 templates/custom_errors/403.html:11
+#: templates/custom_errors/404.html:11 templates/custom_errors/500.html:10
+#, python-format
+msgid "Requested page: <strong>%(request_path)s</strong>"
+msgstr "Çağırılan sayfa: <strong>%(request_path)s</strong>"
+
+#: templates/custom_errors/403.html:4 templates/custom_errors/403.html:9
+msgid "Permission denied"
+msgstr "Yetki dışı"
+
+#: templates/custom_errors/404.html:4 templates/custom_errors/404.html:9
+msgid "Page not found error"
+msgstr "Sayfa bulunamadı"
+
+#: templates/custom_errors/500.html:4 templates/custom_errors/500.html:9
+msgid "Server error"
+msgstr "Sunucu hatası"

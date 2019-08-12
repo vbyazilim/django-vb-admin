@@ -1,6 +1,6 @@
 ![Python](https://img.shields.io/badge/python-3.7.3-green.svg)
 ![Django](https://img.shields.io/badge/django-2.2.4-green.svg)
-![Version](https://img.shields.io/badge/version-1.0.3-orange.svg)
+![Version](https://img.shields.io/badge/version-1.0.4-orange.svg)
 
 # django-vb-admin
 
@@ -211,6 +211,15 @@ All PR’s are welcome!
 
 ## Change Log
 
+**2019-08-12**
+
+- Add `templates/base.html` using [Bulma.io][bulma] 0.7.5
+- Add `templates/admin/` for base admin site.
+- Add `static/js/application.js`
+- Add global locale path
+- Version bump: 1.0.4
+
+
 **2019-08-07**
 
 - Add `--version` option, version bump to 1.0.3
@@ -220,3 +229,5 @@ All PR’s are welcome!
 - Initial Beta relase: 1.0.0
 
 ---
+
+[bulma]: https://bulma.io
