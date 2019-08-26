@@ -16,9 +16,17 @@ task :build => [:clean] do
   system "python setup.py sdist bdist_wheel"
 end
 
-desc "Upload package"
-task :upload => [:build] do
-  system "twine upload dist/*"
+namespace :upload do
+  desc "Upload package to main distro (release)"
+  task :main => [:build] do
+    puts "Uploading package to MAIN distro..."
+    system "twine upload --repository pypi dist/*"
+  end
+  desc "Upload package to test distro"
+  task :test => [:build] do
+    puts "Uploading package to TEST distro..."
+    system "twine upload --repository testpypi dist/*"
+  end
 end
 
 AVAILABLE_REVISIONS = ["major", "minor", "patch"]
