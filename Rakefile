@@ -1,9 +1,8 @@
 task :default => [:install]
 
 task :clean do
-  rm_rf "build"
-  rm_rf "dist"
-  rm_rf "django_vb_admin.egg-info"
+  rm_rf %w(build dist)
+  rm_rf Dir.glob("*.egg-info")
   puts "Build files are removed..."
 end
 
