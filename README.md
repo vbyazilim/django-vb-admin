@@ -224,6 +224,11 @@ All PR’s are welcome!
 
 ## Change Log
 
+**2019-09-19**
+
+- Add Codacy integration
+- Add setup completed message
+
 **2019-08-12**
 
 - Add `templates/base.html` using [Bulma.io][bulma] 0.7.5
