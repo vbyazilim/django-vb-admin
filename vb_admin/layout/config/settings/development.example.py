@@ -13,7 +13,7 @@ from .base import *  # noqa: F403
 
 ansi_escape = re.compile(r'\x1b[^m]*m')
 
-LOGGIN_SKIP_THESE_EXTENSIONS = ['css', 'js', 'png', 'jpg', 'svg', 'gif', 'woff']
+LOGGING_SKIP_THESE_EXTENSIONS = ['css', 'js', 'png', 'jpg', 'svg', 'gif', 'woff']
 
 
 def create_log_message_chunk(record):
@@ -38,7 +38,7 @@ def create_log_message_chunk(record):
 def development_log_callback(record):
     message_chunk = create_log_message_chunk(record)
     if message_chunk:
-        if message_chunk.get('extension') in LOGGIN_SKIP_THESE_EXTENSIONS:
+        if message_chunk.get('extension') in LOGGING_SKIP_THESE_EXTENSIONS:
             return False
     return True
 
@@ -69,10 +69,21 @@ class SQLQueryLogFormatter(logging.Formatter):
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
-    'filters': {'development': {'()': 'django.utils.log.CallbackFilter', 'callback': development_log_callback}},
+    'filters': {
+        'development': {
+            '()': 'django.utils.log.CallbackFilter',
+            'callback': development_log_callback,
+        }
+    },
     'formatters': {
-        'development': {'()': DevelopmentLogFormatter, 'format': '%(levelname)s | %(message)s'},
-        'sql': {'()': SQLQueryLogFormatter, 'format': '%(sql)s\n\ntook: %(duration)f mseconds\n\n'},
+        'development': {
+            '()': DevelopmentLogFormatter,
+            'format': '%(levelname)s | %(message)s',
+        },
+        'sql': {
+            '()': SQLQueryLogFormatter,
+            'format': '%(sql)s\n\ntook: %(duration)f mseconds\n\n',
+        },
     },
     'handlers': {
         'console': {
@@ -81,7 +92,11 @@ LOGGING = {
             'formatter': 'development',
             'filters': ['development'],
         },
-        'console_sql': {'level': 'DEBUG', 'class': 'logging.StreamHandler', 'formatter': 'sql'},
+        'console_sql': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'sql',
+        },
     },
     'loggers': {
         'app': {'handlers': ['console'], 'level': 'DEBUG'},
