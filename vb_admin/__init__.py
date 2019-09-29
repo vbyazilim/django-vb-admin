@@ -1,5 +1,5 @@
 # flake8: noqa
 
-__version__ = '1.0.6'
+__version__ = '1.0.7'
 
 from .command import *
