@@ -40,7 +40,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'vb_baseapp.context_processors.django_environment_variable',
+                'vb_baseapp.context_processors.common_environment_variables',
             ],
         },
     }

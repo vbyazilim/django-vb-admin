@@ -11,9 +11,16 @@ this means you need to install :) macOS users can install via `brew install post
 
 ## Installation
 
+Let’s create PostgreSQL database first:
+
 ```bash
 $ createdb -E UTF8 -T template0 my_project_dev  # create your database
-$ createdb -E UTF8 -T template0 --lc-collate=tr_TR.UTF-8 --lc-ctype=tr_TR.UTF-8 my_project_dev  # create your database with locale support
+$ createdb -E UTF8 -T template0 --lc-collate=tr_TR.UTF-8 --lc-ctype=tr_TR.UTF-8 my_project_dev  # or create your database with Turkish locale support
+```
+
+Now, install package:
+
+```bash
 $ pip install django-vb-admin
 ```
 
@@ -28,6 +35,26 @@ After installation, you’ll have a command: `django-vb-admin`
 ```bash
 $ django-vb-admin -h
 
+usage: django-vb-admin [-h] [-t TARGET] [-v {0,1}] [--version]
+                       [{startproject}]
+
+Create new Django project
+
+positional arguments:
+  {startproject}        Name of command(s)
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -t TARGET, --target TARGET
+                        Target path
+  -v {0,1}, --verbosity {0,1}
+                        Verbose mode
+  --version             show program's version number and exit
+```
+
+Let’s create project:
+
+```bash
 $ mkdir /path/to/my-django-project/
 $ cd /path/to/my-django-project
 $ django-vb-admin startproject                             # create structure to current working directory
