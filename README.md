@@ -17,6 +17,10 @@ $ createdb -E UTF8 -T template0 --lc-collate=tr_TR.UTF-8 --lc-ctype=tr_TR.UTF-8 
 $ pip install django-vb-admin
 ```
 
+This package heavily depends on [django-vb-baseapp](https://github.com/vbyazilim/django-vb-baseapp).
+All the rake tasks are related to `django-vb-baseapp`. You don’t need to do
+anything, `django-vb-admin` installs required packages automatically.
+
 ## Usage
 
 After installation, you’ll have a command: `django-vb-admin`
@@ -195,6 +199,39 @@ Linux/Production packages: `requirements/production.pip`
 -r base.pip
 uWSGI==2.0.18
 ```
+
+---
+
+## `Rakefile`
+
+If you have Ruby installed on your system (*if you are on macOS you’ll have it by default*)
+you can easily automate your basic operations. Run `rake -T` for listing
+available tasks:
+
+```bash
+$ rake -T
+
+rake db:migrate[database]                                        # Run migration for given database (default: 'default')
+rake db:roll_back[name_of_application,name_of_migration]         # Roll-back (name of application, name of migration)
+rake db:shell                                                    # run database shell ..
+rake db:show[name_of_application]                                # Show migrations for an application (default: 'all')
+rake db:update[name_of_application,name_of_migration,is_empty]   # Update migration (name of application, name of migration?, is empty?)
+rake default                                                     # Default task: run_server+
+rake locale:compile                                              # Compile locale dictionary
+rake locale:update                                               # Update locale dictionary
+rake new:application[name_of_application]                        # Create new Django application
+rake new:model[name_of_application,name_of_model,type_of_model]  # Create new Model for given application: django,basemodel,softdelete
+rake runserver                                                   # Run server
+rake runserver_plus                                              # Run server+
+rake shell[repl]                                                 # Run shell+ avail: ptpython,ipython,bpython default: ptpython
+rake test:browse_coverage[port]                                  # Browse test coverage
+rake test:coverage[cli_args]                                     # Show test coverage (default: '--show-missing --ignore-errors --skip-covered')
+rake test:run[name_of_application,verbose]                       # Run tests for given application
+```
+
+Rake tasks are the wrapper for Django’s management commands. Mostly related
+to `django-vb-baseapp` application. Please checkout https://github.com/vbyazilim/django-vb-baseapp
+for more detail and examples. `django-vb-baseapp` has lot of features :)
 
 ---
 
