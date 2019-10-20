@@ -149,7 +149,6 @@ $ git init
 Common packages: `requirements/base.pip`
 
 ```bash
-django-vb-baseapp==1.0.1
 Django==2.2.6
 Pillow==6.2.0
 django-extensions==2.2.3
@@ -157,8 +156,6 @@ python-slugify==3.0.6
 psycopg2-binary==2.8.3
 dj-database-url==0.5.0
 ```
-
-`django-vb-baseapp` makes the magic! Please check out at https://github.com/vbyazilim/django-vb-baseapp
 
 Development packages: `requirements/development.pip`
 
@@ -290,9 +287,12 @@ All PR’s are welcome!
 
 **2019-10-20**
 
+
+- Add current git tag and python version information indicator to django-admin index
+- Add `django-vb-baseapp` as package dependency
 - Upgrade python packages
 - Add `templates/base.html` using [Bulma.io][bulma] 0.8.0
-- Bump version: 1.0.11
+- Bump version: 1.0.13
 
 **2019-09-19**
 
