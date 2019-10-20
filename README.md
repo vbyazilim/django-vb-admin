@@ -79,13 +79,13 @@ Directory structure:
 ├── static
 │   ├── css
 │   │   ├── application.css
-│   │   └── bulma.min.0.7.5.css
+│   │   └── bulma.min.X.X.X.css
 │   ├── images
 │   │   └── .gitkeep
 │   └── js
 │       ├── .gitkeep
 │       ├── application.js
-│       └── fontawesome.5.3.1.all.js
+│       └── fontawesome.X.X.X.all.js
 ├── templates
 │   ├── admin
 │   │   └── base_site.html
@@ -253,7 +253,7 @@ All PR’s are welcome!
 
 1. `fork` (https://github.com/vbyazilim/django-vb-admin/fork)
 1. Create your `branch` (`git checkout -b my-features`)
-1. `commit` yours (`git commit -am 'added killer options'`)
+1. `commit` yours (`git commit -am 'Add awesome feature'`)
 1. `push` your `branch` (`git push origin my-features`)
 1. Than create a new **Pull Request**!
 
@@ -264,6 +264,8 @@ All PR’s are welcome!
 **2019-10-20**
 
 - Upgrade python packages
+- Add `templates/base.html` using [Bulma.io][bulma] 0.8.0
+- Bump version: 1.0.11
 
 **2019-09-19**
 
@@ -276,14 +278,14 @@ All PR’s are welcome!
 - Add `templates/admin/` for base admin site.
 - Add `static/js/application.js`
 - Add global locale path
-- Version bump: 1.0.4
-- Version bump: 1.0.5 (*Fix README file*)
+- Bump version: 1.0.4
+- Bump version: 1.0.5 (*Fix README file*)
 
 
 **2019-08-07**
 
 - Add `--version` option, version bump to 1.0.3
-- Version bump: 1.0.2
+- Bump version: 1.0.2
 - Add Rake tasks
 - Fix MAFIFEST.in file
 - Initial Beta relase: 1.0.0
