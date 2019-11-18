@@ -107,7 +107,16 @@ class Command:
         if self.verbosity > 0:
             self.out('Cloning: test.py')
         shutil.copy2(src_test_config_file, dst_test_config_file)
+        
+        python_version_file = os.path.join(self.target, '.python-version')
+        current_python_version = f'{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}' 
+        
+        with open(python_version_file, 'w') as filepointer:
+            filepointer.write(current_python_version)
 
+        if self.verbosity > 0:
+            self.out(f'.python-version is set to {current_python_version}')
+                
         if self.verbosity > 0:
             self.out(f'Copy completed')
 
