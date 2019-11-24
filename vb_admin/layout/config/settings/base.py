@@ -34,7 +34,10 @@ TEMPLATES = [
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
-            'builtins': ['vb_baseapp.templatetags.html_debug'],
+            'builtins': [
+                'vb_baseapp.templatetags.html_debug',
+                'vb_baseapp.templatetags.custom_submit_row',
+            ],
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
