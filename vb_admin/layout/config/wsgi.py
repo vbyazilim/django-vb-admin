@@ -2,12 +2,11 @@ import os
 import subprocess  # noqa: S404
 import sys
 
-from django.core.wsgi import get_wsgi_application
 from django import VERSION
+from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault(
-    'DJANGO_SETTINGS_MODULE',
-    'config.settings.{0}'.format(os.environ.setdefault('DJANGO_ENV', 'production')),
+    'DJANGO_SETTINGS_MODULE', 'config.settings.{0}'.format(os.environ.setdefault('DJANGO_ENV', 'production'))
 )
 
 GIT_EXECUTE = subprocess.Popen(  # noqa: S603,S607
@@ -23,12 +22,9 @@ CURRENT_PYTHON_VERSION = (
     f'{sys.version_info.releaselevel}'
 )
 
-django_major, django_minor, django_patch, django_tag, __ = VERSION
+DJANGO_MAJOR_VERSION, DJANGO_MINOR_VERSION, DJANGO_PATCH_VERSION, DJANGO_VERSION_TAG, __ = VERSION
 CURRENT_DJANGO_VERSION = (
-    f'{django_major}.'
-    f'{django_minor}.'
-    f'{django_patch}-'
-    f'{django_tag}'
+    f'{DJANGO_MAJOR_VERSION}.' f'{DJANGO_MINOR_VERSION}.' f'{DJANGO_PATCH_VERSION}-' f'{DJANGO_VERSION_TAG}'
 )
 
 os.environ.setdefault('CURRENT_GIT_TAG', CURRENT_GIT_TAG)
