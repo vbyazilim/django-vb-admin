@@ -26,7 +26,7 @@ setup(
     classifiers=[
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Environment :: Console',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3 :: Only',

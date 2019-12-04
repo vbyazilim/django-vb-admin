@@ -31,7 +31,7 @@ namespace :upload do
 end
 
 AVAILABLE_REVISIONS = ["major", "minor", "patch"]
-desc "Bump version"
+desc "Bump version: #{AVAILABLE_REVISIONS.join(',')}"
 task :bump, [:revision] do |t, args|
   args.with_defaults(revision: "patch")
   abort "Please provide valid revision: #{AVAILABLE_REVISIONS.join(',')}" unless AVAILABLE_REVISIONS.include?(args.revision)
