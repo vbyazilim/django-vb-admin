@@ -69,21 +69,10 @@ class SQLQueryLogFormatter(logging.Formatter):
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
-    'filters': {
-        'development': {
-            '()': 'django.utils.log.CallbackFilter',
-            'callback': development_log_callback,
-        }
-    },
+    'filters': {'development': {'()': 'django.utils.log.CallbackFilter', 'callback': development_log_callback}},
     'formatters': {
-        'development': {
-            '()': DevelopmentLogFormatter,
-            'format': '%(levelname)s | %(message)s',
-        },
-        'sql': {
-            '()': SQLQueryLogFormatter,
-            'format': '%(sql)s\n\ntook: %(duration)f mseconds\n\n',
-        },
+        'development': {'()': DevelopmentLogFormatter, 'format': '%(levelname)s | %(message)s'},
+        'sql': {'()': SQLQueryLogFormatter, 'format': '%(sql)s\n\ntook: %(duration)f mseconds\n\n'},
     },
     'handlers': {
         'console': {
@@ -92,11 +81,7 @@ LOGGING = {
             'formatter': 'development',
             'filters': ['development'],
         },
-        'console_sql': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-            'formatter': 'sql',
-        },
+        'console_sql': {'level': 'DEBUG', 'class': 'logging.StreamHandler', 'formatter': 'sql'},
     },
     'loggers': {
         'app': {'handlers': ['console'], 'level': 'DEBUG'},

@@ -14,9 +14,7 @@ class Command:
     def __init__(self):
         self.verbosity = 0
         self.cwd = os.getcwd()
-        self.layout_dir = os.path.join(
-            os.path.dirname(os.path.abspath(__file__)), 'layout'
-        )
+        self.layout_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'layout')
         self.target = self.cwd
 
     def out(self, *messages):
@@ -40,21 +38,11 @@ class Command:
 
         parser = argparse.ArgumentParser(description='Create new Django project')
         parser.add_argument(
-            'command',
-            choices=command_choices,
-            type=str,
-            nargs='?',
-            action='store',
-            help='Name of command(s)',
+            'command', choices=command_choices, type=str, nargs='?', action='store', help='Name of command(s)',
         )
         parser.add_argument('-t', '--target', type=str, help='Target path', default='.')
         parser.add_argument(
-            '-v',
-            '--verbosity',
-            type=int,
-            choices=[0, 1],
-            help='Verbose mode',
-            default=0,
+            '-v', '--verbosity', type=int, choices=[0, 1], help='Verbose mode', default=0,
         )
         parser.add_argument('--version', action='version', version=VERSION)
 
@@ -86,19 +74,11 @@ class Command:
                     self.out(f'Copying {destination}')
                 shutil.copy2(source, destination)
 
-        src_development_config_file = os.path.join(
-            self.layout_dir, 'config', 'settings', 'development.example.py'
-        )
-        src_test_config_file = os.path.join(
-            self.layout_dir, 'config', 'settings', 'test.example.py'
-        )
+        src_development_config_file = os.path.join(self.layout_dir, 'config', 'settings', 'development.example.py')
+        src_test_config_file = os.path.join(self.layout_dir, 'config', 'settings', 'test.example.py')
 
-        dst_development_config_file = os.path.join(
-            self.target, 'config', 'settings', 'development.py'
-        )
-        dst_test_config_file = os.path.join(
-            self.target, 'config', 'settings', 'test.py'
-        )
+        dst_development_config_file = os.path.join(self.target, 'config', 'settings', 'development.py')
+        dst_test_config_file = os.path.join(self.target, 'config', 'settings', 'test.py')
 
         if self.verbosity > 0:
             self.out('Cloning: development.py')
@@ -107,16 +87,16 @@ class Command:
         if self.verbosity > 0:
             self.out('Cloning: test.py')
         shutil.copy2(src_test_config_file, dst_test_config_file)
-        
+
         python_version_file = os.path.join(self.target, '.python-version')
-        current_python_version = f'{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}' 
-        
+        current_python_version = f'{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}'
+
         with open(python_version_file, 'w') as filepointer:
             filepointer.write(current_python_version)
 
         if self.verbosity > 0:
             self.out(f'.python-version is set to {current_python_version}')
-                
+
         if self.verbosity > 0:
             self.out(f'Copy completed')
 

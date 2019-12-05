@@ -19,7 +19,7 @@ admin.site.site_header = _('Your site header')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('__vb_baseapp__/', include('vb_baseapp.urls', namespace='vb_baseapp'))
+    path('__vb_baseapp__/', include('vb_baseapp.urls', namespace='vb_baseapp')),
 ]
 
 if settings.DEBUG:
