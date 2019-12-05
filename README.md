@@ -165,6 +165,7 @@ Development packages: `requirements/development.pip`
 ```bash
 -r base.pip
 ipython==7.10.1
+ipdb==0.12.3
 bpython==0.18
 ptpython==2.0.6
 Werkzeug==0.16.0
@@ -182,7 +183,6 @@ flake8-print==3.1.4
 flake8-quotes==2.1.1
 flake8-string-format==0.2.3
 pylint==2.4.4
-ipdb==0.12.3
 ```
 
 Heroku related packages: `requirements/heroku.pip`
@@ -296,6 +296,7 @@ All PR’s are welcome!
 - Upgrade packages, now using Django 2.2.8
 - Python 3.8.0 support
 - Add new rake tasks
+- Fix `development.pip` package installation order
 - Bump version
 
 **2019-10-20**
