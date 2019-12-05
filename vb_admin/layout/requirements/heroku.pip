@@ -1,5 +1,5 @@
 -r base.pip
-gunicorn==19.9.0
+gunicorn==20.0.4
 whitenoise==4.1.4
-boto3==1.9.253
-django-storages==1.7.2
+boto3==1.10.33
+django-storages==1.8

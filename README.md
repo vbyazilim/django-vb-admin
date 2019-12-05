@@ -1,4 +1,5 @@
 ![Python](https://img.shields.io/badge/python-3.7.4-green.svg)
+![Python](https://img.shields.io/badge/python-3.8.0-green.svg)
 ![Django](https://img.shields.io/badge/django-2.2.6-green.svg)
 ![Version](https://img.shields.io/badge/version-1.1.0-orange.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/638892d4f2bd4f04b2bc6c56881e8b99)](https://www.codacy.com/manual/vigo/django-vb-admin?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=vbyazilim/django-vb-admin&amp;utm_campaign=Badge_Grade)
@@ -150,45 +151,48 @@ Common packages: `requirements/base.pip`
 
 ```bash
 Django==2.2.6
-Pillow==6.2.0
-django-extensions==2.2.3
-python-slugify==3.0.6
-psycopg2-binary==2.8.3
+Pillow==6.2.1
+django-extensions==2.2.5
+python-slugify==4.0.0
+psycopg2-binary==2.8.4
 dj-database-url==0.5.0
+django-vb-baseapp
+vb-console
 ```
 
 Development packages: `requirements/development.pip`
 
 ```bash
 -r base.pip
-ipython==7.8.0
+ipython==7.10.1
 bpython==0.18
 ptpython==2.0.6
 Werkzeug==0.16.0
-django-debug-toolbar==2.0
+django-debug-toolbar==2.1
 coverage==4.5.4
 isort==4.3.21
-black==19.3b0
-flake8==3.7.8
+black==19.10b0
+flake8==3.7.9
 flake8-bandit==2.1.2
 flake8-blind-except==0.1.1
 flake8-bugbear==19.8.0
 flake8-builtins==1.4.1
 flake8-polyfill==1.0.2
-flake8-print==3.1.1
-flake8-quotes==2.1.0
+flake8-print==3.1.4
+flake8-quotes==2.1.1
 flake8-string-format==0.2.3
-pylint==2.4.2
+pylint==2.4.4
+ipdb==0.12.3
 ```
 
 Heroku related packages: `requirements/heroku.pip`
 
 ```bash
 -r base.pip
-gunicorn==19.9.0
+gunicorn==20.0.4
 whitenoise==4.1.4
-boto3==1.9.253
-django-storages==1.7.2
+boto3==1.10.33
+django-storages==1.8
 ```
 
 Built-in support for **AWS-S3 Storage**. You need to create/get your:
@@ -240,13 +244,15 @@ rake db:roll_back[name_of_application,name_of_migration]         # Roll-back (na
 rake db:shell                                                    # run database shell ..
 rake db:show[name_of_application]                                # Show migrations for an application (default: 'all')
 rake db:update[name_of_application,name_of_migration,is_empty]   # Update migration (name of application, name of migration?, is empty?)
-rake default                                                     # Default task: run_server+
+rake default                                                     # Default task: runserver_plus (Werkzeug)
 rake locale:compile                                              # Compile locale dictionary
 rake locale:update                                               # Update locale dictionary
 rake new:application[name_of_application]                        # Create new Django application
 rake new:model[name_of_application,name_of_model,type_of_model]  # Create new Model for given application: django,basemodel,softdelete
-rake runserver                                                   # Run server
-rake runserver_plus                                              # Run server+
+rake runserver:default                                           # Run: runserver (Django's default server)
+rake runserver:default_ipdb                                      # Run: runserver (Django's default server) + ipdb debug support
+rake runserver:plus                                              # Run: runserver_plus (Werkzeug)
+rake runserver:plus_ipdb                                         # Run: runserver_plus (Werkzeug) + ipdb debug support
 rake shell[repl]                                                 # Run shell+ avail: ptpython,ipython,bpython default: ptpython
 rake test:browse_coverage[port]                                  # Browse test coverage
 rake test:coverage[cli_args]                                     # Show test coverage (default: '--show-missing --ignore-errors --skip-covered')
@@ -284,6 +290,11 @@ All PR’s are welcome!
 ---
 
 ## Change Log
+
+**2019-12-05**
+
+- Upgrade packages
+- Add new rake tasks
 
 **2019-10-20**
 

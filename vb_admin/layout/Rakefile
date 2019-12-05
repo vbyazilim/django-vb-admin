@@ -1,5 +1,5 @@
-desc "Default task: run_server+"
-task :default => [:runserver_plus]
+desc "Default task: runserver_plus (Werkzeug)"
+task :default => ["runserver:plus"]
 
 
 task :check_django_environment do
@@ -12,15 +12,30 @@ task :check_development_environment => [:check_django_environment] do
 end
 
 
-desc "Run server+"
-task :runserver_plus => [:check_development_environment] do
-  system "DJANGO_COLORS='dark' python manage.py runserver_plus --nothreading"
-end
+namespace :runserver do
+  desc "Run: runserver_plus (Werkzeug)"
+  task :plus => [:check_development_environment] do
+    puts "-> running: runserver_plus (Werkzeug)"
+    system "DJANGO_COLORS='dark' python manage.py runserver_plus --nothreading"
+  end
 
+  desc "Run: runserver_plus (Werkzeug) + ipdb debug support"
+  task :plus_ipdb => [:check_development_environment] do
+    puts "-> running: runserver_plus (Werkzeug) + ipdb debug support"
+    system "DJANGO_COLORS='dark' PYTHONBREAKPOINT=ipdb.set_trace python manage.py runserver_plus --nothreading"
+  end
 
-desc "Run server"
-task :runserver => [:check_development_environment] do
-  system "DJANGO_COLORS='dark' python manage.py runserver"
+  desc "Run: runserver (Django's default server)"
+  task :default => [:check_development_environment] do
+    puts "-> running: runserver (Django's default server)"
+    system "DJANGO_COLORS='dark' python manage.py runserver"
+  end
+
+  desc "Run: runserver (Django's default server) + ipdb debug support"
+  task :default_ipdb => [:check_development_environment] do
+    puts "-> running: runserver (Django's default server) + ipdb debug support"
+    system "DJANGO_COLORS='dark' PYTHONBREAKPOINT=ipdb.set_trace python manage.py runserver"
+  end
 end
 
 
