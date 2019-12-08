@@ -163,8 +163,9 @@ Development packages: `requirements/development.pip`
 
 ```bash
 -r base.pip
-ipython==7.10.1
+ipython==7.10.0
 ipdb==0.12.3
+prompt-toolkit==2.0.10
 bpython==0.18
 ptpython==2.0.6
 Werkzeug==0.16.0
@@ -183,6 +184,11 @@ flake8-quotes==2.1.1
 flake8-string-format==0.2.3
 pylint==2.4.4
 ```
+
+**Note**: Package order is important here. Due to `prompt-toolkit` dependency
+on `ipdb` and `ptpython`, we need to install specific version: `prompt-toolkit==2.0.10`
+in the given order. Packages are test on Python 3.8.0 environment and had
+issues with `ipdb`, `ipython` and other repls.
 
 Heroku related packages: `requirements/heroku.pip`
 
