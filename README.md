@@ -1,5 +1,4 @@
 ![Python](https://img.shields.io/badge/python-3.7.4-green.svg)
-![Python](https://img.shields.io/badge/python-3.8.0-green.svg)
 ![Django](https://img.shields.io/badge/django-2.2.8-green.svg)
 ![Version](https://img.shields.io/badge/version-1.1.4-orange.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/638892d4f2bd4f04b2bc6c56881e8b99)](https://www.codacy.com/manual/vigo/django-vb-admin?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=vbyazilim/django-vb-admin&amp;utm_campaign=Badge_Grade)
@@ -7,7 +6,7 @@
 # django-vb-admin
 
 Creates custom Django project layout. Compatible with `Django 2.2.8` and
-requires `Python 3.7.x` or `Python 3.8.0`. By default, project uses **PostgreSQL**,
+requires `Python 3.7.x`. By default, project uses **PostgreSQL**,
 this means you need to install :) macOS users can install via `brew install postgres`
 
 ## Installation
@@ -290,6 +289,12 @@ All PR’s are welcome!
 ---
 
 ## Change Log
+
+**2019-12-08**
+
+- Drop Python 3.8.0 support
+- Fix repls and debug related issues
+- Bump version
 
 **2019-12-05**
 
