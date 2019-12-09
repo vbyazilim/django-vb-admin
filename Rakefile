@@ -37,3 +37,21 @@ task :bump, [:revision] do |t, args|
   abort "Please provide valid revision: #{AVAILABLE_REVISIONS.join(',')}" unless AVAILABLE_REVISIONS.include?(args.revision)
   system "bumpversion #{args.revision}"
 end
+
+namespace :docs do
+  desc "Run docs server"
+  task :serve do
+    system "mkdocs serve"
+  end
+  
+  desc "Build docs"
+  task :build do
+    system "mkdocs build"
+  end
+
+  desc "Deploy to github"
+  task :deploy do
+    Rake::Task["docs:build"].invoke
+    system "mkdocs gh-deploy"
+  end
+end

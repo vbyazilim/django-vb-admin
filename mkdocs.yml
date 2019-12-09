@@ -1,0 +1,13 @@
+site_name: django-vb-admin
+site_description: Create custom and tailor made Django project!
+site_author: Uğur vigo Özyılmazel
+theme:
+  name: 'material'
+repo_name: vbyazilim/django-vb-admin
+repo_url: https://github.com/vbyazilim/django-vb-admin
+nav:
+    - Home: "index.md"
+    - Example: "example.md"
+    - Rake Tasks: "rake.md"
+extra_css:
+  - 'css/extra.css'
