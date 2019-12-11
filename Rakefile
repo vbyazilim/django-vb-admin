@@ -41,12 +41,12 @@ end
 namespace :docs do
   desc "Run docs server"
   task :serve do
-    system "mkdocs serve"
+    system "mkdocs serve -a 0.0.0.0:8000"
   end
   
   desc "Build docs"
   task :build do
-    system "mkdocs build"
+    system "mkdocs build --clean"
   end
 
   desc "Deploy to github"
