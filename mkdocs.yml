@@ -5,6 +5,8 @@ theme:
   name: 'material'
 repo_name: vbyazilim/django-vb-admin
 repo_url: https://github.com/vbyazilim/django-vb-admin
+markdown_extensions:
+  - codehilite
 nav:
     - Home: "index.md"
     - Example: "example.md"
