@@ -293,27 +293,28 @@
 <p>If you have Ruby installed on your system (<em>if you are on macOS you’ll have it by default</em>)
 you can easily automate your basic operations. Run <code>rake -T</code> for listing
 available tasks:</p>
-<pre><code class="bash">$ rake -T
+<div class="codehilite"><pre><span></span>$ rake -T
 
-rake db:migrate[database]                                        # Run migration for given database (default: 'default')
-rake db:roll_back[name_of_application,name_of_migration]         # Roll-back (name of application, name of migration)
-rake db:shell                                                    # run database shell ..
-rake db:show[name_of_application]                                # Show migrations for an application (default: 'all')
-rake db:update[name_of_application,name_of_migration,is_empty]   # Update migration (name of application, name of migration?, is empty?)
-rake default                                                     # Default task: runserver_plus (Werkzeug)
-rake locale:compile                                              # Compile locale dictionary
-rake locale:update                                               # Update locale dictionary
-rake new:application[name_of_application]                        # Create new Django application
-rake new:model[name_of_application,name_of_model,type_of_model]  # Create new Model for given application: django,basemodel,softdelete
-rake runserver:default                                           # Run: runserver (Django's default server)
-rake runserver:default_ipdb                                      # Run: runserver (Django's default server) + ipdb debug support
-rake runserver:plus                                              # Run: runserver_plus (Werkzeug)
-rake runserver:plus_ipdb                                         # Run: runserver_plus (Werkzeug) + ipdb debug support
-rake shell[repl]                                                 # Run shell+ avail: ptpython,ipython,bpython default: ptpython
-rake test:browse_coverage[port]                                  # Browse test coverage
-rake test:coverage[cli_args]                                     # Show test coverage (default: '--show-missing --ignore-errors --skip-covered')
-rake test:run[name_of_application,verbose]                       # Run tests for given application
-</code></pre>
+rake db:migrate<span class="o">[</span>database<span class="o">]</span>                                        <span class="c1"># Run migration for given database (default: &#39;default&#39;)</span>
+rake db:roll_back<span class="o">[</span>name_of_application,name_of_migration<span class="o">]</span>         <span class="c1"># Roll-back (name of application, name of migration)</span>
+rake db:shell                                                    <span class="c1"># run database shell ..</span>
+rake db:show<span class="o">[</span>name_of_application<span class="o">]</span>                                <span class="c1"># Show migrations for an application (default: &#39;all&#39;)</span>
+rake db:update<span class="o">[</span>name_of_application,name_of_migration,is_empty<span class="o">]</span>   <span class="c1"># Update migration (name of application, name of migration?, is empty?)</span>
+rake default                                                     <span class="c1"># Default task: runserver_plus (Werkzeug)</span>
+rake locale:compile                                              <span class="c1"># Compile locale dictionary</span>
+rake locale:update                                               <span class="c1"># Update locale dictionary</span>
+rake new:application<span class="o">[</span>name_of_application<span class="o">]</span>                        <span class="c1"># Create new Django application</span>
+rake new:model<span class="o">[</span>name_of_application,name_of_model,type_of_model<span class="o">]</span>  <span class="c1"># Create new Model for given application: django,basemodel,softdelete</span>
+rake runserver:default                                           <span class="c1"># Run: runserver (Django&#39;s default server)</span>
+rake runserver:default_ipdb                                      <span class="c1"># Run: runserver (Django&#39;s default server) + ipdb debug support</span>
+rake runserver:plus                                              <span class="c1"># Run: runserver_plus (Werkzeug)</span>
+rake runserver:plus_ipdb                                         <span class="c1"># Run: runserver_plus (Werkzeug) + ipdb debug support</span>
+rake shell<span class="o">[</span>repl<span class="o">]</span>                                                 <span class="c1"># Run shell+ avail: ptpython,ipython,bpython default: ptpython</span>
+rake test:browse_coverage<span class="o">[</span>port<span class="o">]</span>                                  <span class="c1"># Browse test coverage</span>
+rake test:coverage<span class="o">[</span>cli_args<span class="o">]</span>                                     <span class="c1"># Show test coverage (default: &#39;--show-missing --ignore-errors --skip-covered&#39;)</span>
+rake test:run<span class="o">[</span>name_of_application,verbose<span class="o">]</span>                       <span class="c1"># Run tests for given application</span>
+</pre></div>
+
 
 <p>Rake tasks are the wrapper for Django’s management commands. Mostly related
 to <code>django-vb-baseapp</code> application. Please checkout https://github.com/vbyazilim/django-vb-baseapp

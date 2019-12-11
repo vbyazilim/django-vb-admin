@@ -414,32 +414,34 @@ this means you need to install :) macOS users can install via <code>brew install
 <li>PostgreSQL</li>
 </ul>
 <h2 id="installation">Installation</h2>
-<pre><code class="bash">$ pip install django-vb-admin
-</code></pre>
+<div class="codehilite"><pre><span></span>$ pip install django-vb-admin
+</pre></div>
+
 
 <p>This package heavily depends on <a href="https://github.com/vbyazilim/django-vb-baseapp">django-vb-baseapp</a>.
 All the rake tasks are related to <code>django-vb-baseapp</code>. You don’t need to do
 anything, <code>django-vb-admin</code> installs required packages automatically.</p>
 <h2 id="usage">Usage</h2>
 <p>After installation, you’ll have a command: <code>django-vb-admin</code></p>
-<pre><code class="bash">$ django-vb-admin -h
+<div class="codehilite"><pre><span></span>$ django-vb-admin -h
 
-usage: django-vb-admin [-h] [-t TARGET] [-v {0,1}] [--version]
-                       [{startproject}]
+usage: django-vb-admin <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-t TARGET<span class="o">]</span> <span class="o">[</span>-v <span class="o">{</span><span class="m">0</span>,1<span class="o">}]</span> <span class="o">[</span>--version<span class="o">]</span>
+                       <span class="o">[{</span>startproject<span class="o">}]</span>
 
 Create new Django project
 
 positional arguments:
-  {startproject}        Name of command(s)
+  <span class="o">{</span>startproject<span class="o">}</span>        Name of command<span class="o">(</span>s<span class="o">)</span>
 
 optional arguments:
-  -h, --help            show this help message and exit
+  -h, --help            show this <span class="nb">help</span> message and <span class="nb">exit</span>
   -t TARGET, --target TARGET
                         Target path
-  -v {0,1}, --verbosity {0,1}
+  -v <span class="o">{</span><span class="m">0</span>,1<span class="o">}</span>, --verbosity <span class="o">{</span><span class="m">0</span>,1<span class="o">}</span>
                         Verbose mode
-  --version             show program's version number and exit
-</code></pre>
+  --version             show program<span class="err">&#39;</span>s version number and <span class="nb">exit</span>
+</pre></div>
+
 
 <p>Now you can check the <a href="https://vbyazilim.github.io/django-vb-admin/example/">example page</a></p>
 <hr />

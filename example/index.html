@@ -365,26 +365,29 @@
                 <h1 id="example">Example</h1>
 <p>We’re going to create a Django project skeleton!</p>
 <h2 id="lets-create-project">Let’s create project:</h2>
-<pre><code class="bash">$ mkdir /path/to/my-django-project/
-$ cd /path/to/my-django-project
-$ django-vb-admin startproject                             # create structure to current working directory
+<div class="codehilite"><pre><span></span>$ mkdir /path/to/my-django-project/
+$ <span class="nb">cd</span> /path/to/my-django-project
+$ django-vb-admin startproject                             <span class="c1"># create structure to current working directory</span>
 
-# or
-$ django-vb-admin startproject --target=&quot;/path/to/folder&quot;  # create structure to given path
-</code></pre>
+<span class="c1"># or</span>
+$ django-vb-admin startproject --target<span class="o">=</span><span class="s2">&quot;/path/to/folder&quot;</span>  <span class="c1"># create structure to given path</span>
+</pre></div>
+
 
 <p>When creation completed, you can create your virtual environment and set your
 environment variables:</p>
-<pre><code class="bash">export DJANGO_SECRET=$(head -c 75 /dev/random | base64 | tr -dc 'a-zA-Z0-9' | head -c 50)
-export DATABASE_URL=&quot;postgres://localhost:5432/my_project_dev&quot;
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">DJANGO_SECRET</span><span class="o">=</span><span class="k">$(</span>head -c <span class="m">75</span> /dev/random <span class="p">|</span> base64 <span class="p">|</span> tr -dc <span class="s1">&#39;a-zA-Z0-9&#39;</span> <span class="p">|</span> head -c <span class="m">50</span><span class="k">)</span>
+<span class="nb">export</span> <span class="nv">DATABASE_URL</span><span class="o">=</span><span class="s2">&quot;postgres://localhost:5432/my_project_dev&quot;</span>
+</pre></div>
+
 
 <p>then;</p>
-<pre><code class="bash">$ pip install -r requirements/development.pip
-</code></pre>
+<div class="codehilite"><pre><span></span>$ pip install -r requirements/development.pip
+</pre></div>
+
 
 <p>Directory structure:</p>
-<pre><code class="bash">.
+<div class="codehilite"><pre><span></span>.
 ├── applications
 ├── config
 │   ├── settings
@@ -421,10 +424,10 @@ export DATABASE_URL=&quot;postgres://localhost:5432/my_project_dev&quot;
 │   ├── admin
 │   │   └── base_site.html
 │   ├── custom_errors
-│   │   ├── 400.html
-│   │   ├── 403.html
-│   │   ├── 404.html
-│   │   └── 500.html
+│   │   ├── <span class="m">400</span>.html
+│   │   ├── <span class="m">403</span>.html
+│   │   ├── <span class="m">404</span>.html
+│   │   └── <span class="m">500</span>.html
 │   └── base.html
 ├── .bandit
 ├── .flake8
@@ -439,65 +442,71 @@ export DATABASE_URL=&quot;postgres://localhost:5432/my_project_dev&quot;
 ├── pyproject.toml
 ├── requirements.txt
 └── runtime.txt
-</code></pre>
+</pre></div>
+
 
 <p>Now you can init <code>git</code>:</p>
-<pre><code class="bash">$ cd /path/to/my-django-project/
+<div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> /path/to/my-django-project/
 $ git init
-</code></pre>
+</pre></div>
+
 
 <h2 id="shipped-packages">Shipped Packages</h2>
 <p>Common packages: <code>requirements/base.pip</code></p>
-<pre><code class="bash">Django==2.2.8
-Pillow==6.2.1
-django-extensions==2.2.5
-python-slugify==4.0.0
-psycopg2-binary==2.8.4
-dj-database-url==0.5.0
+<div class="codehilite"><pre><span></span><span class="nv">Django</span><span class="o">==</span><span class="m">2</span>.2.8
+<span class="nv">Pillow</span><span class="o">==</span><span class="m">6</span>.2.1
+django-extensions<span class="o">==</span><span class="m">2</span>.2.5
+python-slugify<span class="o">==</span><span class="m">4</span>.0.0
+psycopg2-binary<span class="o">==</span><span class="m">2</span>.8.4
+dj-database-url<span class="o">==</span><span class="m">0</span>.5.0
 django-vb-baseapp
 vb-console
-</code></pre>
+</pre></div>
+
 
 <p>Development packages: <code>requirements/development.pip</code></p>
-<pre><code class="bash">-r base.pip
-ipython==7.10.0
-ipdb==0.12.3
-prompt-toolkit==2.0.10
-bpython==0.18
-ptpython==2.0.6
-Werkzeug==0.16.0
-django-debug-toolbar==2.1
-coverage==4.5.4
-isort==4.3.21
-black==19.10b0
-flake8==3.7.9
-flake8-bandit==2.1.2
-flake8-blind-except==0.1.1
-flake8-bugbear==19.8.0
-flake8-builtins==1.4.1
-flake8-polyfill==1.0.2
-flake8-print==3.1.4
-flake8-quotes==2.1.1
-flake8-string-format==0.2.3
-pylint==2.4.4
-</code></pre>
+<div class="codehilite"><pre><span></span>-r base.pip
+<span class="nv">ipython</span><span class="o">==</span><span class="m">7</span>.10.0
+<span class="nv">ipdb</span><span class="o">==</span><span class="m">0</span>.12.3
+prompt-toolkit<span class="o">==</span><span class="m">2</span>.0.10
+<span class="nv">bpython</span><span class="o">==</span><span class="m">0</span>.18
+<span class="nv">ptpython</span><span class="o">==</span><span class="m">2</span>.0.6
+<span class="nv">Werkzeug</span><span class="o">==</span><span class="m">0</span>.16.0
+django-debug-toolbar<span class="o">==</span><span class="m">2</span>.1
+<span class="nv">coverage</span><span class="o">==</span><span class="m">4</span>.5.4
+<span class="nv">isort</span><span class="o">==</span><span class="m">4</span>.3.21
+<span class="nv">black</span><span class="o">==</span><span class="m">19</span>.10b0
+<span class="nv">flake8</span><span class="o">==</span><span class="m">3</span>.7.9
+flake8-bandit<span class="o">==</span><span class="m">2</span>.1.2
+flake8-blind-except<span class="o">==</span><span class="m">0</span>.1.1
+flake8-bugbear<span class="o">==</span><span class="m">19</span>.8.0
+flake8-builtins<span class="o">==</span><span class="m">1</span>.4.1
+flake8-polyfill<span class="o">==</span><span class="m">1</span>.0.2
+flake8-print<span class="o">==</span><span class="m">3</span>.1.4
+flake8-quotes<span class="o">==</span><span class="m">2</span>.1.1
+flake8-string-format<span class="o">==</span><span class="m">0</span>.2.3
+<span class="nv">pylint</span><span class="o">==</span><span class="m">2</span>.4.4
+</pre></div>
+
 
 <p><strong>Note</strong>: Package order is important here. Due to <code>prompt-toolkit</code> dependency
 on <code>ipdb</code> and <code>ptpython</code>, we need to install specific version: <code>prompt-toolkit==2.0.10</code>
 in the given order. Packages are test on Python 3.8.0 environment and had
 issues with <code>ipdb</code>, <code>ipython</code> and other repls.</p>
 <p>Heroku related packages: <code>requirements/heroku.pip</code></p>
-<pre><code class="bash">-r base.pip
-gunicorn==20.0.4
-whitenoise==4.1.4
-boto3==1.10.33
-django-storages==1.8
-</code></pre>
+<div class="codehilite"><pre><span></span>-r base.pip
+<span class="nv">gunicorn</span><span class="o">==</span><span class="m">20</span>.0.4
+<span class="nv">whitenoise</span><span class="o">==</span><span class="m">4</span>.1.4
+<span class="nv">boto3</span><span class="o">==</span><span class="m">1</span>.10.33
+django-storages<span class="o">==</span><span class="m">1</span>.8
+</pre></div>
+
 
 <p>Linux/Production packages: <code>requirements/production.pip</code></p>
-<pre><code class="bash">-r base.pip
-uWSGI==2.0.18
-</code></pre>
+<div class="codehilite"><pre><span></span>-r base.pip
+<span class="nv">uWSGI</span><span class="o">==</span><span class="m">2</span>.0.18
+</pre></div>
+
 
 <h2 id="heroku-and-aws">Heroku and AWS</h2>
 <p>Built-in support for <strong>AWS-S3 Storage</strong>. You need to create/get your:</p>
@@ -507,19 +516,20 @@ uWSGI==2.0.18
 </ul>
 <p>and set those variables on Heroku. Please check <code>config/settings/heroku.py</code>
 for more details. Basic Heroku setup:</p>
-<pre><code class="bash">$ heroku login
+<div class="codehilite"><pre><span></span>$ heroku login
 $ heroku apps:create
 $ heroku addons:create heroku-postgresql:hobby-dev
-$ heroku config:set DJANGO_ENV=&quot;heroku&quot;
-$ heroku config:set DJANGO_SECRET='YOUR_GENERATED_RANDOM_SECRET'
-$ heroku config:set S3_ACCESS_KEY_ID='YOUR_S3_ACCESS_KEY_ID'
-$ heroku config:set S3_SECRET_ACCESS_KEY='YOUR_S3_SECRET_ACCESS_KEY'
-$ heroku config:set S3_BUCKET_NAME='YOUR_S3_BUCKET_NAME'
-$ heroku config:set WEB_CONCURRENCY=3
+$ heroku config:set <span class="nv">DJANGO_ENV</span><span class="o">=</span><span class="s2">&quot;heroku&quot;</span>
+$ heroku config:set <span class="nv">DJANGO_SECRET</span><span class="o">=</span><span class="s1">&#39;YOUR_GENERATED_RANDOM_SECRET&#39;</span>
+$ heroku config:set <span class="nv">S3_ACCESS_KEY_ID</span><span class="o">=</span><span class="s1">&#39;YOUR_S3_ACCESS_KEY_ID&#39;</span>
+$ heroku config:set <span class="nv">S3_SECRET_ACCESS_KEY</span><span class="o">=</span><span class="s1">&#39;YOUR_S3_SECRET_ACCESS_KEY&#39;</span>
+$ heroku config:set <span class="nv">S3_BUCKET_NAME</span><span class="o">=</span><span class="s1">&#39;YOUR_S3_BUCKET_NAME&#39;</span>
+$ heroku config:set <span class="nv">WEB_CONCURRENCY</span><span class="o">=</span><span class="m">3</span>
 $ git push heroku master
 $ heroku run python manage.py migrate
 $ heroku run python manage.py createsuperuser
-</code></pre>
+</pre></div>
+
 
 <p>If you want to use email reporter for Django errors, you need to set couple
 more environment variables on Heroku side too.</p>
