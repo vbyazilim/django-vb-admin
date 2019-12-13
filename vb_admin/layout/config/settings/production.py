@@ -64,7 +64,7 @@ logging.config.dictConfig(
                 'formatter': 'default',
                 'stream': sys.stderr,  # noqa: F405
             },
-            'slack': {'level': 'ERROR', 'class': 'baseapp.utils.log.SlackExceptionHandler'},
+            'slack': {'level': 'ERROR', 'class': 'vb_baseapp.utils.log.SlackExceptionHandler'},
         },
         'loggers': {
             '': {'level': 'DEBUG', 'handlers': ['stdout']},
