@@ -9,7 +9,7 @@ with open(os.path.join(CURRENT_WORKING_DIRECTORY, 'README.md')) as fp:
 
 setup(
     name='django-vb-admin',
-    version='1.1.8',
+    version='1.1.9',
     description='Create custom Django project with style...',
     long_description=README,
     long_description_content_type='text/markdown',

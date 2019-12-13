@@ -1,6 +1,6 @@
 ![Python](https://img.shields.io/badge/python-3.7.4-green.svg)
 ![Django](https://img.shields.io/badge/django-2.2.8-green.svg)
-![Version](https://img.shields.io/badge/version-1.1.8-orange.svg)
+![Version](https://img.shields.io/badge/version-1.1.9-orange.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/638892d4f2bd4f04b2bc6c56881e8b99)](https://www.codacy.com/manual/vigo/django-vb-admin?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=vbyazilim/django-vb-admin&amp;utm_campaign=Badge_Grade)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
