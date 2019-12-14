@@ -51,7 +51,6 @@ namespace :docs do
 
   desc "Deploy to github"
   task :deploy do
-    Rake::Task["docs:build"].invoke
     system "mkdocs gh-deploy"
   end
 end
